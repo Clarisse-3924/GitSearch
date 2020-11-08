@@ -21,7 +21,6 @@ export class RequestService {
 
     githubUser(searchName) {
         interface ApiResponse {
-            // name: string;
             html_url: string;
             description: string;
             created_at: Date;
@@ -34,7 +33,6 @@ export class RequestService {
 
         const promise = new Promise((resolve) => {
             this.http.get<ApiResponse>('https://api.github.com/users/' + searchName + '?access_token=' + environment.miApi).toPromise().then(getResponse => {
-                // this.users.name = getResponse.name;
                 this.users.html_url = getResponse.html_url;
                 this.users.login = getResponse.login;
                 this.users.avatar_url = getResponse.avatar_url;
@@ -81,7 +79,6 @@ export class RequestService {
 
                 resolve();
             }, error => {
-                this.searchRepo = 'error';
                 reject(error);
             });
         });
