@@ -11,7 +11,7 @@ import {User} from '../user';
 })
 export class UserComponent implements OnInit {
 
-  public searchMe = '';
+  public searchMe = 'Imaraika';
   public githubUser: string;
 
 
@@ -26,7 +26,7 @@ export class UserComponent implements OnInit {
   }
 
 
-constructor(public githubUserRequest: RequestService, public userRepos:RequestService) { }
+constructor(public githubUserRequest:RequestService, public userRepos:RequestService) { }
 
 ngOnInit() {
     this.githubUserRequest.githubUser(this.searchMe);

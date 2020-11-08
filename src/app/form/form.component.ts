@@ -36,7 +36,7 @@ export class FormComponent implements OnInit {
     }
   
   
-  constructor(public githubUserRequest: RequestService, public userRepos:RequestService) { }
+  constructor(public githubUserRequest:RequestService, public userRepos: RequestService) { }
   
   ngOnInit() {
       this.githubUserRequest.githubUser(this.searchMe);
