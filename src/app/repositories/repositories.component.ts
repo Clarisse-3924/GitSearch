@@ -16,11 +16,6 @@ export class RepositoriesComponent implements OnInit {
     public searchRepo: string;
   users: import("/home/clarisse/Documents/Git/src/app/user").User;
    
-
-    searchRepos(ange) {
-        this.searchRepo = '';
-
-    }
     public searchMe = '';
     public githubUser: string;
 

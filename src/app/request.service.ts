@@ -70,12 +70,14 @@ export class RequestService {
 
     gitRepos(searchName) {
         interface ApiResponse {
-            items: any;
+          name: string;
+          description: string;
+          created_at: Date;
         }
 
         const promise = new Promise((resolve, reject) => {
-            this.http.get<ApiResponse>('https://api.github.com/search/repositories?q=' + searchName + ' &per_page=10 ' + environment.miApi).toPromise().then(getRepoResponse => {
-                this.searchRepo = getRepoResponse.items;
+          this.http.get<ApiResponse>('https://api.github.com/users/' + searchName + '/repos?order=created&sort=asc?access_token=' + environment.miApi).toPromise().then(getRepoResponse => {
+            this.newRepository = getRepoResponse;
 
                 resolve();
             }, error => {
