@@ -25,7 +25,6 @@ export class RepositoriesComponent implements OnInit {
 
   ngOnInit() {
      
-      this.gitRepoRequest.gitRepos(this.searchRepo);
-
+     
 }
 }
