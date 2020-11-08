@@ -14,18 +14,27 @@ export class RepositoriesComponent implements OnInit {
 
     repository: Repository;
     public searchRepo: string;
+  users: import("/home/clarisse/Documents/Git/src/app/user").User;
    
 
     searchRepos(ange) {
         this.searchRepo = '';
 
     }
+    public searchMe = '';
+    public githubUser: string;
 
-    constructor(public gitRepoRequest: RequestService ) { }
+    findUser(username) {
+      this.githubUser = '';
+      this.searchMe  = username;
+      this.ngOnInit();
+  }
+  constructor(public githubUserRequest: RequestService, public userRepos:RequestService) { }
 
-  ngOnInit() {
-     
-      this.gitRepoRequest.gitRepos(this.searchRepo);
-
+ngOnInit() {
+    this.githubUserRequest.githubUser(this.searchMe);
+    this.users = this.githubUserRequest.users;
+    this.userRepos.gitUserRepos(this.searchMe);
+    console.log(this.userRepos);
 }
 }
