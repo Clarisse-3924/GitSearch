@@ -5,6 +5,7 @@ export const environment = {
   production: false,
   miApi:'a3ba208001e1310e82d8fd27c9e78cffc3d1d049'
 };
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

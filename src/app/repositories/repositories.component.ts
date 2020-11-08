@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 
 import {RequestService} from '../request.service';
@@ -22,7 +21,7 @@ export class RepositoriesComponent implements OnInit {
 
     }
 
-    constructor(public gitRepoRequest:RequestService ) { }
+    constructor(public gitRepoRequest: RequestService ) { }
 
   ngOnInit() {
      

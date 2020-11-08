@@ -13,8 +13,7 @@ import { UserComponent } from './user/user.component';
 import { RouterModule } from '@angular/router';
 import { RoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { UpperPipe } from './upper.pipe';
-import { StrikethroughDirective } from './strikethrough.directive';
+import { Upper } from './upper.pipe';
 
 
 
@@ -25,8 +24,7 @@ import { StrikethroughDirective } from './strikethrough.directive';
     RepositoriesComponent,
     FormComponent,
     UserComponent,
-    UpperPipe,
-    StrikethroughDirective
+    Upper
     
   ],
   imports: [
