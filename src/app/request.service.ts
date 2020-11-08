@@ -21,6 +21,7 @@ export class RequestService {
 
     githubUser(searchName) {
         interface ApiResponse {
+            // name: string;
             html_url: string;
             description: string;
             created_at: Date;
@@ -33,6 +34,7 @@ export class RequestService {
 
         const promise = new Promise((resolve) => {
             this.http.get<ApiResponse>('https://api.github.com/users/' + searchName + '?access_token=' + environment.miApi).toPromise().then(getResponse => {
+                // this.users.name = getResponse.name;
                 this.users.html_url = getResponse.html_url;
                 this.users.login = getResponse.login;
                 this.users.avatar_url = getResponse.avatar_url;
@@ -68,17 +70,16 @@ export class RequestService {
 
     gitRepos(searchName) {
         interface ApiResponse {
-          name: string;
-          description: string;
-          created_at: Date;
+            items: any;
         }
 
         const promise = new Promise((resolve, reject) => {
-          this.http.get<ApiResponse>('https://api.github.com/users/' + searchName + '/repos?order=created&sort=asc?access_token=' + environment.miApi).toPromise().then(getRepoResponse => {
-            this.newRepository = getRepoResponse;
+            this.http.get<ApiResponse>('https://api.github.com/search/repositories?q=' + searchName + ' &per_page=10 ' + environment.miApi).toPromise().then(getRepoResponse => {
+                this.searchRepo = getRepoResponse.items;
 
                 resolve();
             }, error => {
+                this.searchRepo = 'error';
                 reject(error);
             });
         });

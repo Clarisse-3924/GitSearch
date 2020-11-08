@@ -2,7 +2,7 @@
     <ng-progress></ng-progress>
     <div class="row ">
     <div class="col-md-9 text-center">
-      <!-- <app-form (getName)='searchRepos($event)'></app-form> -->
+      <app-form (getName)='searchRepos($event)'></app-form>
     </div>
   </div>
   <div class="row">
@@ -11,12 +11,14 @@
         <div class="table">
           <table class="table">
             <tbody>
-                <tr *ngFor='let repository of userRepos.newRepository'>
-                    <td>
-                        <a href="{{repository.html_url}}" target="_blank" >{{repository.name}}</a><br>
-                          <p class="desc">Description: {{repository.description}}</p><br>
-                          <p>Date Created: {{repository.created_at | date}}</p>
-                      </td>
+              <tr *ngFor=" let repository of gitRepoRequest.searchRepo" >
+                <td>
+                  <p>Repository Owner:
+                  <a href="{{repository.name.html_url}}">{{repository.name.login}}</a>
+                  </p>
+                  <p>Date Created : {{repository.created_at|date}}</p>
+                  <p>Description : {{repository.description}}</p>
+                </td>
               </tr>
             </tbody>
           </table>
