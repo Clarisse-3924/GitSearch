@@ -12,7 +12,7 @@ This project allows user to enter the git hub username and it gives them their r
 You have to open yur terminal(Ctrl+Alt+T) You have to clone this project by using this link https://github.com/Clarisse-3924/GitSearch.git
 
 ## To live site on GitHub Pages
-(click here to view website)[https://clarisse-3924.github.io/GitSearch/]
+(click here to view website)[https://clarisse-3924.github.io/GitSearch/.]
 
 
 ## Copyright and license information
