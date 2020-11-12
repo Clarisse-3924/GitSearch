@@ -13,6 +13,7 @@ You have to open yur terminal(Ctrl+Alt+T) You have to clone this project by usin
 
 ## To live site on GitHub Pages
 
+[click here to see website](https://clarisse-3924.github.io/GitSearch/.)
 
 
 ## Copyright and license information
