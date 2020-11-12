@@ -33,7 +33,7 @@ export class RequestService {
         }
 
         const promise = new Promise((resolve) => {
-            this.http.get<ApiResponse>('https://api.github.com/users/' + searchName + '?access_token=' + environment.miApi).toPromise().then(getResponse => {
+            this.http.get<ApiResponse>('https://api.github.com/users/' + searchName + '?access_token=' + environment.myApi).toPromise().then(getResponse => {
                 // this.users.name = getResponse.name;
                 this.users.html_url = getResponse.html_url;
                 this.users.login = getResponse.login;
@@ -57,7 +57,7 @@ export class RequestService {
         }
 
         const myPromise = new Promise((resolve, reject) => {
-            this.http.get<ApiResponse>('https://api.github.com/users/' + searchMe + '/repos?order=created&sort=asc?access_token=' + environment.miApi).toPromise().then(getRepoResponse => {
+            this.http.get<ApiResponse>('https://api.github.com/users/' + searchMe + '/repos?order=created&sort=asc?access_token=' + environment.myApi).toPromise().then(getRepoResponse => {
                 this.newRepository = getRepoResponse;
                 resolve();
             }, error => {

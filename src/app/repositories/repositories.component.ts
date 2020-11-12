@@ -12,19 +12,11 @@ import {Repository} from '../repository';
 })
 export class RepositoriesComponent implements OnInit {
 
-    repository: Repository;
-    public searchRepo: string;
-   
 
-    searchRepos(ange) {
-        this.searchRepo = '';
 
-    }
-
-    constructor(public gitRepoRequest: RequestService ) { }
+    constructor() { }
 
   ngOnInit() {
      
-     
-}
+     }
 }
